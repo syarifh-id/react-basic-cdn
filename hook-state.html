@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      {
+        /* kita dapat memanfaatkan fitur dari react agar web kita lebih inteaktif dan menarik salah satunya adalah hooks, hooks merupakan serangkaian function/logic yang bisa kita tambahkan pada komponen*/
+      }
+
+      function Tombol() {
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+        return <button onClick={handleClick}>like {likes}</button>;
+      }
+
+      function MyApp() {
+        return <Tombol />;
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<MyApp />);
+    </script>
+  </body>
+</html>
